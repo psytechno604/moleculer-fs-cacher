@@ -77,10 +77,10 @@ class FsCacher extends BaseCacher {
    * @memberof FsCacher
    */
   async set (key, data, fsCacherPath, stringifier = JSON.stringify) {
+    const fullPath = await this._getFullPath(key, fsCacherPath)
     if (data) {
       this.metrics.increment(METRIC.MOLECULER_CACHER_SET_TOTAL)
-      const timeEnd = this.metrics.timer(METRIC.MOLECULER_CACHER_SET_TIME)
-      const fullPath = await this._getFullPath(key, fsCacherPath)
+      const timeEnd = this.metrics.timer(METRIC.MOLECULER_CACHER_SET_TIME)      
       await this._writeFile(fullPath, typeof data === 'string' ? data : stringifier(data))
       timeEnd()
       this.logger.debug(`SET ${key}`)
