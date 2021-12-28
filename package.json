@@ -1,0 +1,14 @@
+{
+  "name": "moleculer-fs-cacher",
+  "version": "1.0.0",
+  "description": "File system cacher for Moleculer microservices framework (https://moleculer.services)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergey Razumov",
+  "license": "ISC",
+  "dependencies": {
+    "moleculer": "^0.14.18"
+  }
+}
